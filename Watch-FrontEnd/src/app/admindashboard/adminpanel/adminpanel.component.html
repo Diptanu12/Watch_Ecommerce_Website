@@ -1,0 +1,38 @@
+
+
+<div id="main" *ngIf="isSignedin">
+  <nav v-bind:class="active" v-on:click.prevent>
+   
+   <a  class="projects"  (click)="categorybtn()">Category</a>
+   <a  class="services" (click)="productbtn()">Product</a>
+   <span><a  class="home" (click)="logoutbtn()">Logout</a></span>
+  </nav>
+ </div>
+
+
+
+
+
+
+
+<div class="container1 m-3 ">
+  <ng-template [ngIf]="toggle">
+    <div class="container text-dark">
+      <app-category></app-category>
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="!toggle">
+    <div class="container text-dark ">
+      <app-listproduct></app-listproduct>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<nav class="navbar12 navbar-expand-lg navbar-dark my-3 p-4 mx1" >
+  <div class="container-fluid2">
+  
+  </div>
+</nav>
