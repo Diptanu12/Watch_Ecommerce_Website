@@ -1,0 +1,175 @@
+
+
+/* Customize modal title */
+.modal-title {
+  font-size: 24px;
+  color: #f7f3f3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style the modal header */
+.modal-header {
+  background-color: #007bff;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style form labels */
+.form-label {
+  font-weight: bold;
+  color: #111010;
+}
+
+/* Style form inputs and select */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+}
+
+/* Style the file input */
+input[type="file"] {
+  margin-top: 5px;
+}
+
+/* Style the image preview */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style modal footer buttons */
+.modal-footer {
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+  padding: 15px;
+  background-color: transparent;
+}
+
+/* Style close button */
+.btn-close {
+  color: #383636;
+  font-size: 24px;
+}
+
+/* Style Add button */
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style Close button */
+.btn-warning {
+  background-color: #ffc107;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-body{
+ background-image: url("https://images.pexels.com/photos/7455434/pexels-photo-7455434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+}
+
+#ct_catid{
+  background-color: transparent;
+}
+
+/* Style the select dropdown */
+select {
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.293 9.293a1 1 0 0 1 1.414 0L8 10.586l.293-.293a1 1 0 1 1 1.414 1.414l-2 2a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L8 10.586l.293-.293z"/><path d="M8 2a1 1 0 0 1 .707.293l2 2a1 1 0 0 1-1.414 1.414L8 4.414 6.707 5.707a1 1 0 0 1-1.414-1.414l2-2A1 1 0 0 1 8 2z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+/* Add hover effect for buttons */
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+
+
+
+
+  /* Style the form container */
+.form-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the search input */
+  .form-control {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .form-control::placeholder {
+    color: #bbb;
+  }
+  
+  /* Style the search button */
+  .btn-outline-primary {
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-outline-primary:hover {
+    background: linear-gradient(to bottom, #2980b9, #3498db);
+    transform: scale(1.05);
+  }
+  
+  /* Apply styles to the form elements on focus */
+  .form-control:focus {
+    border-color: #3498db;
+    background-color: #f2f2f2;
+  }
+  
+  .hm-gradient {
+    background-image: linear-gradient(to top, #f77288 0%, #4188f1 99%, #0c53bd 100%);
+}
+.navbar .dropdown-menu a:hover {
+    color: #524d4d !important;
+}
+.darken-grey-text {
+    color: #443f3f;
+}
+
+.ap{
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}

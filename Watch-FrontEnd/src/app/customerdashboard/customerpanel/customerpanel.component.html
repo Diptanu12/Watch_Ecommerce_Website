@@ -1,0 +1,261 @@
+<section class="py-2 text-center container1 sec">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="text">Watches</h1>
+      <p class="text">“Smart watches are wearable computers that can track your fitness, make calls, and send text
+        messages. They can also be used to control music playback, get notifications, and even pay for goods and
+        services. Smart watches come in a variety of shapes, sizes, and prices, so there is one for everyone. They are a
+        great way to stay connected and organized, and they can also help you improve your health and fitness.”.
+        <br>
+        -Steve Mann (a Canadian inventor, in 1998)
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FLOATING VIEW -->
+
+<div class="fab-wrapper">
+  <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
+  <label class="fab" for="fabCheckbox">
+    <span class="fab-dots fab-dots-1"></span>
+    <span class="fab-dots fab-dots-2"></span>
+    <span class="fab-dots fab-dots-3"></span>
+  </label>
+  <div class="fab-wheel">
+    <a class="fab-action fab-action-1 float-end" (click)="showcart()" data-bs-target="#showcart" data-bs-toggle="modal"
+      type="submit">
+      <i class="fa fa-cart-plus" style="font-size:24px"></i>
+    </a>
+
+    <a class="fab-action fab-action-2">
+      <i class="fa fa-sign-out" routerLink="/home"></i>
+    </a>
+    <a class="fab-action fab-action-3" data-bs-target="#openshiping" data-bs-toggle="modal" >
+      <i class="fa fa-address-card"></i>
+    </a>
+    <a class="fab-action fab-action-4">
+      <i class="fa fa-info" routerLink="/faq"></i>
+    </a>
+  </div>
+</div>
+
+
+
+
+<!-- CART PRODUCT TEMPLATE -->
+
+
+<div class="modal fade" tabindex="-1" id="showcart" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Your Shopping Cart
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" data-bs-dismiss="modal" aria-label="Close">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-image">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Total</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let a of cart">
+              <td class="w-25">
+                <img src="data:image/*;base64,{{a.pic}}" class="img-fluid img-thumbnail" alt="Sheep">
+              </td>
+              <td>{{a.prnm}}</td>
+              <td>{{a.price | currency:'INR'}}</td>
+              <td class="qty">1</td>
+              <td>{{a.price | currency:'INR'}}</td>
+              <td>
+                <a (click)="deletecart(a)" class="btn btn-danger btn-sm">
+                  <i class="fa fa-times"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-end">
+          <h5>Price: <span class="price text-success">{{tot | currency:'INR'}}</span></h5>
+
+        </div>
+        <div class="d-flex justify-content-end">
+          <p>GST: <span class="price1 text-success">{{tot * 0.18 | currency:'INR'}}</span></p>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-end">
+          <h5>Total: <span class="price text-success">{{tot + (tot * 0.18) | currency:'INR'}}</span></h5>
+
+        </div>
+      </div>
+      <div class="modal-footer border-top-0 d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bs-dismiss="modal"
+          aria-label="Close">Close</button>
+        <button type="button" class="btn btn-success" (click)="ordernow()" aria-label="Order Now">Checkout</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SHIPPING ADDRESS HTML -->
+
+
+<div class="mb-3 container">
+  <div class="modal fade" tabindex="-1" id="openshiping" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container12">
+            <div id="h1dv">
+              <h1 id="s1">Shipping</h1>
+              <p id="sp1">Please enter your shipping details.</p>
+            </div>
+            <hr />
+            <div class="form">
+              <div class="fields fields--2">
+                <label class="field">
+                  <span class="field__label" for="firstname">First name</span>
+                  <input class="field__input form-control" type="text" id="firstname" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="lastname">Last name</span>
+                  <input class="field__input form-control" type="text" id="lastname" />
+                </label>
+              </div>
+              <label class="field">
+                <span class="field__label" for="address">Address</span>
+                <input class="field__input form-control" type="text" id="address" />
+              </label>
+              <label class="field">
+                <span class="field__label" for="country">Country</span>
+                <input class="field__input form-control" type="text" id="address" />
+              </label>
+              <div class="fields fields--3">
+                <label class="field">
+                  <span class="field__label" for="zipcode">Zip code</span>
+                  <input class="field__input form-control" type="text" id="zipcode" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="city">City</span>
+                  <input class="field__input form-control" type="text" id="city" />
+                </label>
+                <label class="field">
+                  <span class="field__label" for="state">State</span>
+                  <input class="field__input form-control" type="text" id="city" />
+                </label>
+              </div>
+            </div>
+            <hr>
+            <!-- <button class="button"  data-bs-target="#addressModal" data-bs-toggle="modal" type="submit">Save</button> -->
+            <button class="button" (click)="showcart()"  data-bs-target="#showcart" data-bs-toggle="modal"
+            type="submit">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- PRODUCT LIST HTML -->
+
+
+
+<div class="container-fluid">
+  <label class="form-label me-2" for="ct_catid">
+    <h3>CATEGORY</h3>
+  </label>
+  <select id="sl" aria-describedby="emailHelp" [(ngModel)]="catid" (change)="showValue()">
+    <option *ngFor="let a of catObj" [value]="a.catid">{{a.catnm}}</option>
+  </select>
+</div>
+
+
+
+<div class="container">
+  <div class="modal fade" id="myModal" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-target="#myModal" data-bs-toggle="modal" type="submit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#007bff;">
+        </div>
+        <div class="modal-body" style="text-align: center;">
+          <p>Your Product Saved in WishList💖.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="modal fade" id="addressModal" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-target="#addressModal" data-bs-toggle="modal" type="submit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#007bff;">
+        </div>
+        <div class="modal-body" style="text-align: center;">
+          <p>Your Shipping Address Saved!📝.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container bg-white">
+
+  <div class="row">
+    <ng-container *ngFor="let a of prdtbycat">
+      <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+        <div class="product"> <img src="data:image/*;base64,{{a.pic}}" alt="">
+          <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+            <li class="icon"><span><i class="fa fa-arrows-alt" style="font-size:24px"></i></span></li>
+            <li class="icon mx-3" data-bs-target="#myModal" data-bs-toggle="modal"
+            type="submit"><span class="fa fa-heart"></span></li>
+            <li class="icon" (click)="addtolocalstorage(a)"><span class="fa fa-shopping-bag"></span></li>
+          </ul>
+        </div>
+        <div class="tag bg-red">sale</div>
+        <div class="title pt-4 pb-1" data-bs-toggle="modal" data-bs-target="#showdescrip">{{a.prnm}}</div>
+        <div class="d-flex align-content-center justify-content-center"> <span class="fa fa-star"></span> <span
+            class="fa fa-star"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> <span
+            class="fa fa-star"></span> </div>
+        <div class="price">{{a.price | currency : 'INR'}}</div>
+      </div>
+
+
+    </ng-container>
+  </div>
+
+</div>

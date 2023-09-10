@@ -1,0 +1,25 @@
+
+<div class="container1" *ngIf="isSignedin">
+	
+	<div class="card text-center" style="width: 25rem;">
+		<div class="card-body">
+			
+			<img src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img">
+			<h5 class="card-title">Welcome back, {{ signedinUser }}!</h5>
+			<p class="card-text">You Are the Admin of Our Website, Good Luck</p>
+			<a style=" cursor: pointer;" (click)="doSignout()" class="btn btn-danger me-3">Signout</a>
+			<!-- <a style=" cursor: pointer;" routerLink="/admin" class="btn btn-warning">Operation</a> -->
+		</div>
+	</div>
+
+</div>
+<div class="container2 my-4">
+
+	<div class="center">
+		<h1>WELCOME</h1>
+		<h3>ADMIN</h3>
+		<div class="btn1" routerLink="/admin">Enter</div>
+	  </div>
+</div>
+
+	

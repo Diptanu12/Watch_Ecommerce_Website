@@ -1,0 +1,609 @@
+
+
+
+
+body {
+    background-color: bisque
+}
+
+.container {
+    margin:  auto;
+    
+}
+
+
+.container .product-item {
+    min-height: 450px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0
+}
+
+.container .product-item .product {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.container .product-item .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.container .product-item .product .icons .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease;
+    transform: rotate(180deg);
+    cursor: pointer
+}
+
+.container .product-item .product .icons .icon:hover {
+    background-color: #b71c1c;
+    color: #fff
+}
+
+.container .product-item .product .icons .icon:nth-last-of-type(3) {
+    transition-delay: 0.2s
+}
+
+.container .product-item .product .icons .icon:nth-last-of-type(2) {
+    transition-delay: 0.15s
+}
+
+.container .product-item .product .icons .icon:nth-last-of-type(1) {
+    transition-delay: 0.1s
+}
+
+.container .product-item:hover .product .icons .icon {
+    transform: translateY(-60px)
+}
+
+.container .product-item .tag {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 0 0.4rem
+}
+
+.container .product-item .title {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px
+}
+
+.container .product-item .fa-star {
+    font-size: 0.65rem;
+    color: goldenrod
+}
+
+.container .product-item .price {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600
+}
+
+.fw-800 {
+    font-weight: 800
+}
+
+.bg-green {
+    background-color: #208f20 !important;
+    color: #fff
+}
+
+.bg-black {
+    background-color: #1f1d1d;
+    color: #fff
+}
+
+.bg-red {
+    background-color: #bb3535;
+    color: #fff
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.fab-wrapper {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+}
+.fab-checkbox {
+  display: none;
+}
+.fab {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  width: 4rem;
+  height: 4rem;
+  
+  border-radius: 50%;
+  background: rgb(25, 226, 199);
+  box-shadow: 0px 5px 20px #81a4f1;
+  transition: all 0.3s ease;
+  z-index: 1;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #0c50a7;
+}
+
+.fab:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.fab-checkbox:checked ~ .fab:before {
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.fab:hover {
+  background: #f58e52;
+  box-shadow: 0px 5px 20px 5px #81a4f1;
+  text-decoration: none;
+}
+
+.fab-dots {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: rgb(12, 11, 11);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateX(0%) translateY(-50%) rotate(0deg);
+  opacity: 1;
+  animation: blink 3s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.fab-dots-1 {
+  left: 15px;
+  animation-delay: 0s;
+}
+.fab-dots-2 {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation-delay: 0.4s;
+}
+.fab-dots-3 {
+  right: 15px;
+  animation-delay: 0.8s;
+}
+
+.fab-checkbox:checked ~ .fab .fab-dots {
+  height: 6px;
+}
+
+.fab .fab-dots-2 {
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+}
+
+.fab-checkbox:checked ~ .fab .fab-dots-1 {
+  width: 32px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.fab-checkbox:checked ~ .fab .fab-dots-3 {
+  width: 32px;
+  border-radius: 10px;
+  right: 50%;
+  transform: translateX(50%) translateY(-50%) rotate(-45deg);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.fab-checkbox:checked ~ .fab .fab-dots {
+  animation: none;
+}
+
+.fab-wheel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+ 
+  width: 10rem;
+  height: 10rem;
+  transition: all 0.3s ease;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+.fab-checkbox:checked ~ .fab-wheel {
+  transform: scale(1);
+}
+.fab-action {
+  position: absolute;
+  background: #035170;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(218, 213, 241);
+  box-shadow: 0 0.1rem 1rem rgba(24, 66, 154, 0.82);
+  transition: all 1s ease;
+
+  opacity: 0;
+}
+
+.fab-checkbox:checked ~ .fab-wheel .fab-action {
+  opacity: 1;
+}
+
+.fab-action:hover {
+  background-color: #f16100;
+  text-decoration: none;
+}
+
+.fab-wheel .fab-action-1 {
+  right: -1rem;
+  top: 0;
+}
+
+.fab-wheel .fab-action-2 {
+  right: 3.4rem;
+  top: 0.5rem;
+}
+.fab-wheel .fab-action-3 {
+  left: 0.5rem;
+  bottom: 3.4rem;
+}
+.fab-wheel .fab-action-4 {
+  left: 0;
+  bottom: -1rem;
+}
+
+
+
+
+/* Center the container */
+.container-fluid {
+  margin: 0 auto;
+  max-width: 400px; /* Adjust the width as needed */
+  /* padding: 20px; */
+  background-color: transparent;
+  
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Style the label */
+.form-label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+#sl {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent; /* Set select background to transparent */
+
+}
+
+
+ option {
+  background-color: transparent; /* Set option background to transparent */
+}
+
+/* Style the h3 within the label */
+.form-label h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+
+
+.container12 {
+  max-width: 40rem;
+ 
+  margin: 0 auto;
+ 
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size:large;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #aaf0f5;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  color: #161515;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+.field__input{
+  border: 1px solid rgb(80, 74, 73);
+
+}
+#s1, #sp1{
+text-align: center;
+}
+#h1dv{
+  background-image: linear-gradient(80deg, #f1b4d1, #aea2ee);
+}
+.ord{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.container {
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+.modal-content{
+  width: auto;
+}
+
+
+
+
+
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn:hover{
+  background-color:green;
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+h5 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+.ord {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.sec {
+  background-color: #f0f0f0; 
+  padding: 20px; 
+  border-radius: 10px; 
+}
+
+
+h1.text {
+  font-size: 36px; 
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+p.text {
+  font-size: 18px;
+  color: #666; 
+  line-height: 1.5; 
+  text-align: left; 
+}
+
+
+p.text::before {
+  content: open-quote;
+}
+
+p.text::after {
+  content: close-quote;
+}
+
+
+p.text::after {
+  content: " - Steve Mann (1998)";
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-style: italic;
+  color: #999;
+}
+
+
+.btn-outline-dark {
+  border-color: #fff;
+  color: #fff; 
+}
+
+
+.fa-cart-arrow-down {
+  font-size: 36px;
+  color: rgb(21, 137, 214); 
+}
+
+
+table{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  padding: 2rem 0rem;
+}
+
+.table-image thead td,
+.table-image thead th {
+  border: 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+.table-image td,
+.table-image th {
+  vertical-align: middle;
+  text-align: center;
+}
+.table-image td.qty,
+.table-image th.qty {
+  max-width: 2rem;
+}
+
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

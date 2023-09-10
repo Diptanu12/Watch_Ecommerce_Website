@@ -1,0 +1,40 @@
+
+<div class="welcome body1">
+	<div class="overlay"></div>
+	<div class="content">
+	  <p>QUICKLY. RELIABLE. DESIGNABLE.</p>
+	  <h1 class="title" data-title="Welcome to Goldex Signup">Welcome to Goldex Signup</h1>
+	</div>
+  </div>
+
+	<div id="login-box">
+
+		<div class="left-box">
+			<form name='signupForm' (submit)="doSignup()">
+				<h3> Sign Up </h3>
+				<div style="color : red" *ngIf='error'>{{error}}</div>
+				<div style="color : green" *ngIf='success'>{{success}}</div>
+				<input type="text" name="username" placeholder="Username" [(ngModel)]="username" />
+
+				<input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+
+				<div *ngFor="let role of user_roles" class="my-2">
+					<input class="me-2" [(ngModel)]="role.selected" name="{{ role.name }}" type="checkbox"
+						id="{{role.name}}" (change)="onChangeCategory($event, role)">
+					<label class="form-check-label" for="{{role.name}}">
+						{{role.name}}
+					</label>
+				</div>
+				<input class="my-5" type="submit" name="singup-button" placeholder="Sing Up" />
+			</form>
+			
+		</div>
+		<div class="right-box">
+			<span class="signinwith">Sign up with<br>Social Network </span>
+			<button class="social facebook">Sign up with Facebook</button>
+			<button class="social twitter">Sign up with Twitter</button>
+			<button class="social google">Sign up with Google+</button>
+
+		</div>
+		<div class="or">OR</div>
+	</div>

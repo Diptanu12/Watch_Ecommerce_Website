@@ -1,0 +1,42 @@
+
+
+<div class="welcome body1">
+	<div class="overlay"></div>
+	<div class="content">
+	  <p>QUICKLY. RELIABLE. DESIGNABLE.</p>
+	  <h1 class="title" data-title="Welcome to Goldex Signin">Welcome to Goldex Signin</h1>
+	</div>
+  </div>
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		
+	  <form name='signinForm' (submit)="doSignin()">
+		
+		<h1>Admin Sign in</h1>
+		<input type="text"  name='username' placeholder="username" [(ngModel)]="username" />
+		<input type="password" name='password' placeholder="Password" [(ngModel)]="password"/>
+		<button name="submit" type="submit" value="Signin" >Sign In</button>
+		
+		<a class="top_link" routerLink="">Return home</a>
+	  </form>
+	 
+	</div>
+	<div class="overlay-container">
+	  <div class="overlay">
+		<div class="overlay-panel overlay-left">
+		  <h1>Welcome Back!</h1>
+		  <p>To keep connected with us please login with your personal info</p>
+		  <button class="ghost" id="signIn">Sign In</button>
+		</div>
+		<div class="overlay-panel overlay-right">
+		  <h1>Hello, Admin!</h1>
+		  <p>Thank You for here ! Hope your are doing well, and we are heartly welcome you in Website.</p>
+		  <button class="ghost" id="signUp" routerLink="/">Return </button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  
